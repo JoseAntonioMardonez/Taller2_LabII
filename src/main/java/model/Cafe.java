@@ -1,13 +1,19 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Cafe {
 	private String nombre;
 	private int gramosDeCafe;
 	private int mililitrosDeAgua;
-	private String tamanio;
+	private Tamanio tamanio;
+	private ArrayList<IngredientesOpcionales> ingredientes;
 
-	public Cafe(String nombre, int gramosDeCafe, int mililitrosDeAgua, String tamanio) {
-		throw new UnsupportedOperationException();
+	public Cafe(String nombre, int gramosDeCafe, int mililitrosDeAgua, Tamanio tamanio) {
+		this.nombre=nombre;
+		this.gramosDeCafe=gramosDeCafe;
+		this.mililitrosDeAgua=mililitrosDeAgua;
+		this.tamanio=tamanio;
 	}
 
 	public String getNombre() {
@@ -34,11 +40,11 @@ public class Cafe {
 		this.mililitrosDeAgua = mililitrosDeAgua;
 	}
 
-	public String getTamanio() {
+	public Tamanio getTamanio() {
 		return this.tamanio;
 	}
 
-	public void setTamanio(String tamanio) {
+	public void setTamanio(Tamanio tamanio) {
 		this.tamanio = tamanio;
 	}
 }

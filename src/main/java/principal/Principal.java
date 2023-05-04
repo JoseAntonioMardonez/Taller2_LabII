@@ -1,12 +1,14 @@
 package principal;
 
+import gui.VentanaPrincipal;
+
 public class Principal {
 
-	public void main(Object[] string) {
-		throw new UnsupportedOperationException();
+	public static void main(String[] args) {
+		inicializar();
 	}
 
-	public void inicializar() {
-		throw new UnsupportedOperationException();
+	public static void inicializar() {
+		new VentanaPrincipal();
 	}
 }
