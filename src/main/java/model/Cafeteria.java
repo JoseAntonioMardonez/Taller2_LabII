@@ -7,9 +7,11 @@ public class Cafeteria {
 	private String nombre;
 	private String direccion;
 	private ArrayList<Cafe> cafes = new ArrayList<Cafe>();
+	private ArrayList<RedSocial> redesSociales = new ArrayList<RedSocial>();
 
 	public Cafeteria(String nombre, String direccion) {
-		throw new UnsupportedOperationException();
+		this.nombre=nombre;
+		this.direccion=direccion;
 	}
 
 	public String getNombre() {
@@ -26,5 +28,17 @@ public class Cafeteria {
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+
+	public ArrayList<Cafe> getCafes() {
+		return cafes;
+	}
+
+	public ArrayList<RedSocial> getRedesSociales() {
+		return redesSociales;
+	}
+
+	public String toString() {
+		return nombre+", "+direccion+", "+redesSociales;
 	}
 }

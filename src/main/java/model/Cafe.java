@@ -47,4 +47,12 @@ public class Cafe {
 	public void setTamanio(Tamanio tamanio) {
 		this.tamanio = tamanio;
 	}
+
+	public ArrayList<IngredientesOpcionales> getIngredientes() {
+		return ingredientes;
+	}
+
+	public String toString() {
+		return nombre+", "+gramosDeCafe+", "+mililitrosDeAgua+", "+tamanio+", "+ingredientes;
+	}
 }
