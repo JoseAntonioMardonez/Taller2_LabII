@@ -6,10 +6,10 @@ public class Cafe {
 	private String nombre;
 	private int gramosDeCafe;
 	private int mililitrosDeAgua;
-	private Tamanio tamanio;
+	private String tamanio;
 	private ArrayList<IngredientesOpcionales> ingredientes;
 
-	public Cafe(String nombre, int gramosDeCafe, int mililitrosDeAgua, Tamanio tamanio) {
+	public Cafe(String nombre, int gramosDeCafe, int mililitrosDeAgua, String tamanio) {
 		this.nombre=nombre;
 		this.gramosDeCafe=gramosDeCafe;
 		this.mililitrosDeAgua=mililitrosDeAgua;
@@ -40,11 +40,11 @@ public class Cafe {
 		this.mililitrosDeAgua = mililitrosDeAgua;
 	}
 
-	public Tamanio getTamanio() {
+	public String getTamanio() {
 		return this.tamanio;
 	}
 
-	public void setTamanio(Tamanio tamanio) {
+	public void setTamanio(String tamanio) {
 		this.tamanio = tamanio;
 	}
 

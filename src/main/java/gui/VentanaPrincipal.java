@@ -64,6 +64,8 @@ public class VentanaPrincipal extends Ventana{
     }
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.botonAgregar) {
+            this.dispose();
+            new VentanaAgregarCafe();
 
         }
         if (e.getSource() == this.botonDescontinuar) {

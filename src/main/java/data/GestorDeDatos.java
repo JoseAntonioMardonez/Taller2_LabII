@@ -8,7 +8,7 @@ import java.util.List;
 
 public class GestorDeDatos {
 
-    public static Cafeteria leerArchivoCafes(Cafeteria Cafeteria, String direccionArchivo) {
+    public static Cafeteria leerArchivoCafes(Cafeteria cafeteria, String direccionArchivo) {
         String textoArchivo = "";
         try {
             File archivo = new File(direccionArchivo);
@@ -17,8 +17,8 @@ public class GestorDeDatos {
             //Lee cada linea del archivo hasta que la linea sea nula
             while ((textoArchivo = br.readLine()) != null) {
                 String[] data = textoArchivo.split(",");
-                for(Cafe cafe : cafeteria.getCafes()){
-                    cafeteria.getCafes().add(new Cafe(data[0], data[1]));
+                for (Cafe cafe : cafeteria.getCafes()) {
+                    cafeteria.getCafes().add(new Cafe(data[0], Integer.parseInt(data[1]), Integer.parseInt(data[2]), data[3]));
                 }
             }
             br.close();
@@ -26,9 +26,10 @@ public class GestorDeDatos {
         } catch (Exception e) {
             System.out.println("Documento no disponible, favor contactar con administrador");
         }
-        return tienda;
+        return cafeteria;
     }
-    public static Tienda leerArchivoProductos(Tienda tienda, String direccionArchivo) {
+
+    public static Cafeteria leerArchivoCafeteria(Cafeteria cafeteria, String direccionArchivo) {
         String textoArchivo = "";
         try {
             File archivo = new File(direccionArchivo);
@@ -37,15 +38,16 @@ public class GestorDeDatos {
             //Lee cada linea del archivo hasta que la linea sea nula
             while ((textoArchivo = br.readLine()) != null) {
                 String[] data = textoArchivo.split(",");
-                tienda.getProductos().add(new Producto(data[0], Integer.parseInt(data[1]), data[2], Integer.parseInt(data[3])));
+                //new cafeteria(data[0], data[1]);
             }
             br.close();
             fr.close();
         } catch (Exception e) {
             System.out.println("Documento no disponible, favor contactar con administrador");
         }
-        return tienda;
+        return cafeteria;
     }
+
     public static boolean registrarDato(Object objeto, String direccionArchivo) {
         boolean lineaVacia = false;
         try {
@@ -68,6 +70,7 @@ public class GestorDeDatos {
             return false;
         }
     }
+
     public static boolean registrarDatos(List objetos, String direccionArchivo) {
         try {
             File file = new File(direccionArchivo);
@@ -92,3 +95,4 @@ public class GestorDeDatos {
             return false;
         }
     }
+}
